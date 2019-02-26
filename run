@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# run node app
+HOST=35.186.181.184 USER=worker PASSWORD=worker DATABASE=dev node backend/api_js/index.js

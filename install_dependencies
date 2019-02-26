@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# install node dependencies
+npm install express
+npm install cors
+npm install mysql
