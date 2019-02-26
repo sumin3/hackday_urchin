@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $("#submit_button").click(function(){
     user_input = $("#video_id").val();
-    $.ajax({
+   /* $.ajax({
+      dataType: "jsonp",
       type: "POST",
       url: "https://www.youtube.com/watch?v=" + user_input,
       success: function(data) {
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       error: function() {
         onYouTubeIframeAPIReady('dQw4w9WgXcQ');
+        */
+        onYouTubeIframeAPIReady(user_input);
       }
     })
   })
