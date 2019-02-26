@@ -7,9 +7,11 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="../../static/scripts/stats.js"></script>
 		<script src="../../static/scripts/comments.js"></script>
 		<link rel="stylesheet" type="text/css" href="../../static/styles/comments.css">
 		<link rel="stylesheet" href="static/main/assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="../../static/styles/stats.css">
 	</head>
 	<body class="is-preload">
 
@@ -20,8 +22,51 @@
 						<header>
 						<h1 onclick="getComments()" >Comments</h1>
 						<div class="listing"></div>
+							<h1>Unitube</h1>
+							<p>An awesome Youtube media player site. Check out work at <a href="https://github.com/sumin3/hackday_urchin">@Github</a></p>
+							<ul class="actions">
+								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>
 						</header>
 						<div class="content">
+							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section id="first">
+						<header>
+							<h2>Magna sed nullam nisl adipiscing</h2>
+						</header>
+						<div class="content">
+
+				<!-- the iframe begin -->
+
+				<form>
+					videoId:<br>
+					<input type="text" id="video_id"></input>
+					<input type="button" id="submit_button" value="Search">
+				</form>
+				<div id="player"></div>
+				<!-- the iframe end -->
+				<!-- start stats -->
+			  <div id="stats">
+				  <table id="simpleTbl">
+			    </table>
+			  </div>
+				<!-- end stats -->
+							<p><strong>Lorem ipsum dolor</strong> sit amet consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Feugiat consequat tempus ultrices</h2>
+						</header>
+						<div class="content">
+
 						ADD VIDEO AND STATS ABOVE THIS
 							<h1>Unitube</h1>
 							<p>An awesome Youtube media player site. Check out work at <a href="https://github.com/sumin3/hackday_urchin">@Github</a></p>
@@ -42,6 +87,7 @@
 			<script src="static/main/assets/js/breakpoints.min.js"></script>
 			<script src="static/main/assets/js/util.js"></script>
 			<script src="static/main/assets/js/main.js"></script>
+			<script src="static/main/assets/js/iframe.js"></script>
 
 	</body>
 </html>
