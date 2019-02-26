@@ -29,7 +29,7 @@ router.post('/mailchimp/subscribe', (req, res) => {
     }
   })
   .end(function(err, response) {
-    if (response.status < 300 || (response.status === 400 && response.body.title === "Member Exists")) {
+    if (response.status === 200 || (response.status === 400 && response.body.title === "Member Exists")) {
       return res.json({
         status: 'Success'
       });
