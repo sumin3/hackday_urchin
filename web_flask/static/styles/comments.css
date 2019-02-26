@@ -15,7 +15,7 @@
   border-color: gray;
   border-style: outset;
   border-radius: 4px;
-  height: 1200px;
+  height: 1000px;
   overflow:scroll;
 }
 
@@ -23,10 +23,10 @@
 .comments {
   margin: 8px;
   margin-bottom: 8px;
-  padding: 9px;
+  padding: 5px;
   border: 2px solid black;
   border-radius: 5px;
-  font-size: 120%;
+  font-size: 105%;
 }
 /* blue text */
 .style1 {
