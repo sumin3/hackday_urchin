@@ -4,8 +4,19 @@
 		<title>Unitube App</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name='google-signin-scope' content='profile email'>
+        <meta name='google-signin-client_id' content='956875282901-bm5fiq9693oei3230hbksvdsc9qs055k.apps.googleusercontent.com'>
 		<link rel="stylesheet" href="static/landing/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="static/landing/assets/css/noscript.css" /></noscript>
+
+        <script src='https://apis.google.com/js/platform.js' async defer></script>
+        <script
+		  src="https://code.jquery.com/jquery-3.3.1.min.js"
+		  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		  crossorigin="anonymous"></script>
+ 
+
+
 	</head>
 	<body class="is-preload">
 
@@ -16,9 +27,9 @@
 					<section id="main">
 						<header>
 
-							<span class="avatar"><img src="static/landing/images/avatar.png" alt="" /></span>
-							<h1>Unitube App</h1>
-							<p>Team Sea Urchin</p>
+							<span class="avatar"><img src="static/landing/images/avatar2.jpg" style="width:100%;" alt="" /></span>
+							<h1>Unitube</h1>
+							<p>UniTube is an online service that allows users to view a live feed of the comments on any Youtube video. The service is completely free and is ideal for those who want a more community-minded experience when watching YouTube videos. Because it also retrieves various other metrics about a video, it is also great for people without the time to search various sites to retrieve data about a YouTube video.</p>
 
 						</header>
 						<hr />
@@ -30,6 +41,7 @@
 								</div>
 								<div class="field">
 									<input type="email" name="email" id="email" placeholder="Email" />
+									<img src="https://static.thenounproject.com/png/994628-200.png" id='avatar_goog'>
 								</div>
 								<div class="field">
 									<select name="department" id="department">
@@ -52,7 +64,9 @@
 								</div>
 							</div>
 							<ul class="actions special">
-								<li><a href="#" class="button">Get Started</a></li>
+								<li><a href="unitube" class="button">Login</a>
+        <div class='g-signin2' data-onsuccess='onSignIn' data-theme='dark'></div>
+								</li>
 							</ul>
 						</form>
 						<hr />
@@ -80,7 +94,28 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
+	            function onSignIn(googleUser) {
+	                var profile = googleUser.getBasicProfile();
+	                console.log('ID: ' + profile.getId());
+	                console.log('Full Name: ' + profile.getName());
+	                console.log('Given Name: ' + profile.getGivenName());
+	                console.log('Family Name: ' + profile.getFamilyName());
+	                console.log('Image URL: ' + profile.getImageUrl());
+	                console.log('Email: ' + profile.getEmail());
+	                $('#email').val(profile.getEmail());
+	                $('#avatar_goog').attr('src', profile.getImageUrl());
+	                var id_token = googleUser.getAuthResponse().id_token;
+	                console.log('ID Token: ' + id_token);
+	            }
 			</script>
 
 	</body>
+</html>
+<html lang='en'>
+    <head>
+    </head>
+    <body>
+        <script>
+        </script>
+    </body>
 </html>
