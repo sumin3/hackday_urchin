@@ -4,9 +4,9 @@ const HOST = process.env.HOST;
 const USER = process.env.USER;
 const PASSWORD = process.env.PASSWORD;
 const DATABASE = process.env.DATABASE;
-const mailchimpInstance   = 'us20';
-const listUniqueId        = '38727d257e';
-const mailchimpApiKey     = '85ef0b54b6ca36a2b2050439769f264d-us20';
+const mailchimpInstance   = process.env.MCINSTANCE;
+const listUniqueId        = process.env.MCLIST;
+const mailchimpApiKey     = process.env.MCAPI;
 
 const router = express.Router();
 
