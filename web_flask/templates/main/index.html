@@ -11,6 +11,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="../../static/scripts/comments.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../static/styles/comments.css">
 		<link rel="stylesheet" href="static/main/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -21,11 +24,8 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
-							<h1>Paradigm Shift</h1>
-							<p>A free responsive site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> / <a href="https://html5up.net">HTML5 UP</a></p>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
+						<h1 onclick="getComments()" >Comments</h1>
+						<div class="listing"></div>
 						</header>
 						<div class="content">
 							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
