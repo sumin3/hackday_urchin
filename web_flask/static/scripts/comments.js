@@ -1,6 +1,8 @@
 let url =
 "https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=WILNIXZr2oc&key=AIzaSyAwzRLehoMPKA4cyls3k_wlE6LRHrjEbXo";
 
+getComments();
+
 function getComments() {
   let listo = [];
 
