@@ -4,11 +4,14 @@ starts a Flask web app
 """
 from flask import Flask, render_template
 import os
+from flask_cors import CORS
+
 
 # Global Flask Application Variable: app
-#app = Flask(__name__)
 application = Flask(__name__)
 application.url_map.strict_slashes = False
+cors = CORS(application, resources={r"/*": {"origins": "*"}})
+
 
 @application.route('/')
 def index():
@@ -20,6 +23,7 @@ def index():
 def show_video():
     """Display page with prompt for YouTube video ID"""
     return render_template('main/index.html')
+
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', port=5000)
