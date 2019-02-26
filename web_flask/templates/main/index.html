@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="../../static/scripts/comments.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../static/styles/comments.css">
 		<link rel="stylesheet" href="static/main/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -15,6 +18,8 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
+						<h1 onclick="getComments()" >Comments</h1>
+						<div class="listing"></div>
 							<h1>Unitube</h1>
 							<p>An awesome Youtube media player site. Check out work at <a href="https://github.com/sumin3/hackday_urchin">@Github</a></p>
 							<ul class="actions">

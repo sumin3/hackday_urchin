@@ -8,22 +8,22 @@ from flask_cors import CORS
 
 
 # Global Flask Application Variable: app
-app = Flask(__name__)
-app.url_map.strict_slashes = False
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+application = Flask(__name__)
+application.url_map.strict_slashes = False
+cors = CORS(application, resources={r"/*": {"origins": "*"}})
 
 
-@app.route('/')
+@application.route('/')
 def index():
     """Display log in page"""
     return render_template('landing/index.html')
 
 
-@app.route('/unitube/')
+@application.route('/unitube/')
 def show_video():
     """Display page with prompt for YouTube video ID"""
     return render_template('main/index.html')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    application.run(host='0.0.0.0', port=5000)
