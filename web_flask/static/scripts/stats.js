@@ -41,9 +41,10 @@ $(function () {
       setTimeout(doPoll, 10000);
     });
   }
- $('#hit').click(function() {
-  videoId = $('#term').val(); 
-  urlEndpoint = 'https://www.googleapis.com/youtube/v3/videos?id='+videoId+'&key='+apiKey+'&part='+items.join(',');
-  doPoll();
-         });
+  $("#submit_button").click(function(){
+    user_input = $("#video_id").val();
+    urlEndpoint = 'https://www.googleapis.com/youtube/v3/videos?id='+user_input+'&key='+apiKey+'&part='+items.join(',');
+    doPoll();
+    })  
+
 });
