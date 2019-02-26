@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
   last_name     VARCHAR(60),
   email         VARCHAR(256) NOT NULL,
   img_url       VARCHAR(256),
+  subscribe     INT NOT NULL,
   PRIMARY KEY (id)
 );
 DELIMITER ;;
