@@ -41,3 +41,7 @@
 
 }
 
+#wrapper > section.intro > header > * {
+  width: 30rem !important;
+}
+
