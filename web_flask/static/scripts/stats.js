@@ -48,14 +48,20 @@ $(function () {
   }
   $("#submit_button").click(function(){
     user_input = $("#video_id").val();
+    if (user_input.includes('=')) {
+      user_input = user_input.split('=')[1];
+    }
+
+
     urlEndpoint = 'https://www.googleapis.com/youtube/v3/videos?id='+user_input+'&key='+apiKey+'&part='+items.join(',');
 	user_input = $("#video_id").val();
 	let commenturl =
 	  'https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId='
 	  + user_input + '&key=AIzaSyAxPRheqC6lE3mv7BLRkm6WTLuVT6BPHpA';
-	getComments();
+  	getComments();
     doPoll();
-    })  
+    playYTVideo();
+    });
 
 });
 
@@ -65,7 +71,15 @@ getComments();
 function getComments() {
   let listo = [];
 
-  $.getJSON(commenturl, function(responseJSON){
+  let comment_input = $("#video_id").val();
+  if (comment_input.includes('=')) {
+    comment_input = comment_input.split('=')[1];
+  }
+  let comment_url =
+    'https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId='
+    + comment_input + '&key=AIzaSyAxPRheqC6lE3mv7BLRkm6WTLuVT6BPHpA';
+
+  $.getJSON(comment_url, function(responseJSON){
     console.log(responseJSON.items.forEach((data) => listo.push(data.snippet.topLevelComment.snippet.textOriginal)));
 
     $('div.listing').children().remove();
