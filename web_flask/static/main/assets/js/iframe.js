@@ -6,20 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $("#submit_button").click(function(){
     user_input = $("#video_id").val();
-   /* $.ajax({
-      dataType: "jsonp",
-      type: "POST",
-      url: "https://www.youtube.com/watch?v=" + user_input,
-      success: function(data) {
-        onYouTubeIframeAPIReady(user_input);
-      },
-      error: function() {
-        onYouTubeIframeAPIReady('dQw4w9WgXcQ');
-        */
-        onYouTubeIframeAPIReady(user_input);
-      }
-    })
-  })
+    console.log(user_input);
+    onYouTubeIframeAPIReady(user_input);
+  });
   
   // This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement("script");
