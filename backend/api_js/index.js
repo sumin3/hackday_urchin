@@ -11,7 +11,6 @@ const HOST = process.env.HOST;
 const USER = process.env.USER;
 const PASSWORD = process.env.PASSWORD;
 const DATABASE = process.env.DATABASE;
-console.log(HOST, USER, PASSWORD, DATABASE);
 function getConnection (){
   return mysql.createPool({
     host: HOST,
