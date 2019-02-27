@@ -4,14 +4,17 @@ document.addEventListener("DOMContentLoaded", function() {
     // VideoID getter.
   var user_input;
 
-  playYTVideo = function(){
+  $("#submit_button").click(function(){
     user_input = $("#video_id").val();
-    if (user_input.includes('=')) {
-      user_input = user_input.split('=')[1];
+    if (user_input === "fakelink" || user_input === "surprise me" || user_input === '2006'){
+      onYouTubeIframeAPIReady('dQw4w9WgXcQ');
+      return;
     }
-    console.log(user_input);
-    onYouTubeIframeAPIReady(user_input);
-  };
+    else {
+      onYouTubeIframeAPIReady(user_input);
+      return;
+    }
+  });
   
   // This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement("script");
