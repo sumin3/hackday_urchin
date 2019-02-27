@@ -4,7 +4,7 @@ starts a Flask web app
 """
 from flask import Flask, render_template
 import os
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 
 # Global Flask Application Variable: app
@@ -20,6 +20,7 @@ def index():
 
 
 @application.route('/unitube/')
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def show_video():
     """Display page with prompt for YouTube video ID"""
     return render_template('main/index.html')
