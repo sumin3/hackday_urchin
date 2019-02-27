@@ -33,7 +33,7 @@
 
 						</header>
 						<hr />
-						<h2>!</h2>
+						<h2></h2>
 						<form method="post" action="#">
 							<div class="fields">
 							<ul class="actions special">
@@ -81,7 +81,9 @@
 	                console.log('ID Token: ' + id_token);
 			console.log("profile is", profile);
 			console.log("id token", id_token);
-			window.location = "http://urchin.holberton.us/unitube";
+			$(".g-signin2").click(function() {
+				window.location = "http://urchin.holberton.us/unitube";
+				});
 	            }
 			</script>
 

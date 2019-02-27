@@ -1,5 +1,10 @@
+
+let commenturl =
+"https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=dQw4w9WgXcQ&key=AIzaSyAxPRheqC6lE3mv7BLRkm6WTLuVT6BPHpA";
+
+
 $(function () {
-  const apiKey = 'AIzaSyB3nerfUInHAox-TqKLclp6uHwuzyR4fAU';
+  const apiKey = 'AIzaSyAxPRheqC6lE3mv7BLRkm6WTLuVT6BPHpA';
   const items = ['statistics','status','contentDetails'];
   let videoId = '';
   let urlEndpoint = '';
@@ -43,8 +48,53 @@ $(function () {
   }
   $("#submit_button").click(function(){
     user_input = $("#video_id").val();
+    if (user_input.includes('=')) {
+      user_input = user_input.split('=')[1];
+    }
+
+
     urlEndpoint = 'https://www.googleapis.com/youtube/v3/videos?id='+user_input+'&key='+apiKey+'&part='+items.join(',');
+	user_input = $("#video_id").val();
+	let commenturl =
+	  'https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId='
+	  + user_input + '&key=AIzaSyAxPRheqC6lE3mv7BLRkm6WTLuVT6BPHpA';
+  	getComments();
     doPoll();
-    })  
+    playYTVideo();
+    });
 
 });
+
+
+getComments();
+
+function getComments() {
+  let listo = [];
+
+  let comment_input = $("#video_id").val();
+  if (comment_input) {
+    if (comment_input.includes('=')) {
+      comment_input = comment_input.split('=')[1];
+    }
+    let comment_url =
+      'https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId='
+      + comment_input + '&key=AIzaSyAxPRheqC6lE3mv7BLRkm6WTLuVT6BPHpA';
+
+    $.getJSON(comment_url, function(responseJSON){
+      console.log(responseJSON.items.forEach((data) => listo.push(data.snippet.topLevelComment.snippet.textOriginal)));
+
+      $('div.listing').children().remove();
+        for (let i = 0; i < listo.length; i++) {
+          if (i % 2 === 0) {
+            $('div.listing').append('<div class="comments style1">'+listo[i]+'</div>');
+          } else {
+            $('div.listing').append('<div class="comments style2">'+listo[i]+'</div>');
+
+          }
+        }
+    });
+  }
+};
+
+
+setInterval(getComments, 10000);

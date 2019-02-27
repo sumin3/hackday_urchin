@@ -4,11 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // VideoID getter.
   var user_input;
 
-  $("#submit_button").click(function(){
+  playYTVideo = function(){
     user_input = $("#video_id").val();
+    if (user_input.includes('=')) {
+      user_input = user_input.split('=')[1];
+    }
     console.log(user_input);
     onYouTubeIframeAPIReady(user_input);
-  });
+  };
   
   // This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement("script");
